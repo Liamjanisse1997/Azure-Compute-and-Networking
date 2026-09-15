@@ -759,7 +759,14 @@ Why does RDP generate traffic continuously?
 Answer: RDP maintains an active interactive session and continuously exchanges information needed to keep the remote desktop synchronized.
 
 
+Instructor Note
 
+There are two Azure-specific points I would change from the original instructions before putting this into a student handout:
+
+"Disable inbound ICMP" should be taught as creating an NSG deny rule, rather than simply looking for an ICMP on/off switch. Azure NSGs use prioritized security rules to permit or deny traffic.
+DHCP may not behave as expected in Azure. ipconfig /renew is still useful as an experiment, but students should not be told that it is guaranteed to generate a visible DHCP exchange in an Azure VM.
+
+I would also recommend having students record the private IP addresses, VNet name, subnet name, and NSG name during Part 1. That makes Parts 2 and 3 considerably easier to follow.
 
 
 
